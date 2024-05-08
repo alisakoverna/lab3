@@ -2,6 +2,10 @@ chcp 65001
 @echo off
 setlocal
 
+echo Використання цього батч-файлу:
+echo %0 <джерело> <призначення>
+echo.
+
 pause
 
 rem Перевірка наявності введених аргументів
@@ -25,7 +29,7 @@ if not exist "%destination%\" (
 )
 
 rem Виконання копіювання з джерела в призначення
-robocopy "%source%" "%destination%" /E /XO /MOV /V
+robocopy "%source%" "%destination%" /E /XO /MOV 
 
 rem Перевірка коду завершення та виведення відповідного повідомлення
 if %errorlevel% equ 0 (
